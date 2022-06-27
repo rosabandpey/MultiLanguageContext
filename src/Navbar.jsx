@@ -9,7 +9,7 @@ import "bootstrap/dist/js/bootstrap";
 
 export default function Navbar({children}) {
 
-  const {language,changeLanguage,words}=useContext(LanguageContext);
+  const {language,changeLanguage,words}=useLanguage();
 
   const handleLang=(e)=>{
     changeLanguage(e.target.innerHTML)

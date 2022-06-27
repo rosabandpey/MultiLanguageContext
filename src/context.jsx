@@ -32,36 +32,23 @@ const LanguageProvider=({ children }) =>{
 const [language,setLanguage]=useState("English")
 const [words,setWord]=useState([])
 
-function toggleLang(){
-  
-}
+
 useEffect(()=>{
   const newArray=translations.filter(item=>(item.language==language))
   const newArray1=newArray.map(item=>(item.words))
- // console.log(newArray1);
    setWord(newArray1)
-  // console.log(words)
-  // newArray1.map(item=>console.log(item.home))
+  
 },[language])
-useEffect(()=>{
-//   const newArray=translations.filter(item=>(item.language==language))
-//   const newArray1=newArray.map(item=>(item.words))
-//  // console.log(newArray1);
-//    setWord(newArray1)
-   console.log(words)
-   words.map(item=>console.log(item.home))
-},[words])
+
 const changeLanguage=(lang)=>{
   
   if (lang=="فارسی"){
-    // setLanguage((language)=>(language="Persian"))
     setLanguage(()=>"Persian")
     
   }
   if (lang=="English"){
     setLanguage(()=>"English")
   }  
-   // console.log(lang)
     
        
 }
