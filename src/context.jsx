@@ -30,7 +30,7 @@ const translations = [
 const LanguageProvider=({ children }) =>{
 
 const [language,setLanguage]=useState("English")
-const [words,setWord]=useState("English")
+const [words,setWord]=useState([])
 
 function toggleLang(){
   
@@ -49,7 +49,7 @@ useEffect(()=>{
 //  // console.log(newArray1);
 //    setWord(newArray1)
    console.log(words)
-  // newArray1.map(item=>console.log(item.home))
+   words.map(item=>console.log(item.home))
 },[words])
 const changeLanguage=(lang)=>{
   

@@ -18,27 +18,27 @@ export default function Navbar({children}) {
 
   return (
     <div>
-      {/* {words.map(item=>( */}
+      {words.map(item=>(
     <ul className="nav nav-tabs">
       
       <li className="nav-item">
         <a className="nav-link" href="#" >
-          
+          {item.home}
         </a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          Events
+          {item.events}
         </a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          About Us
+          {item.aboutUs}
         </a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          Contact Us
+          {item.contactUs}
         </a>
       </li>
 
@@ -50,7 +50,7 @@ export default function Navbar({children}) {
           aria-expanded="false"
           data-bs-toggle="dropdown"
         >
-          Language
+          {item.language}
         </a>
         <ul className="dropdown-menu">
           <li className="nav-item">
@@ -66,7 +66,7 @@ export default function Navbar({children}) {
         </ul>
       </li>
     </ul>
-    {/* ))} */}
+     ))} 
     </div>
   );
 }
