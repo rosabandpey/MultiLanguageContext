@@ -7,15 +7,23 @@ import { createContext,useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 
-export default function Navbar() {
+export default function Navbar({children}) {
 
-  const {language,changeLanguage,word}=useContext(LanguageContext);
+  const {language,changeLanguage,words}=useContext(LanguageContext);
+
+  const handleLang=(e)=>{
+    changeLanguage(e.target.innerHTML)
+    
+  }
 
   return (
+    <div>
+      {/* {words.map(item=>( */}
     <ul className="nav nav-tabs">
+      
       <li className="nav-item">
-        <a className="nav-link" href="#">
-          Home
+        <a className="nav-link" href="#" >
+          
         </a>
       </li>
       <li className="nav-item">
@@ -46,17 +54,19 @@ export default function Navbar() {
         </a>
         <ul className="dropdown-menu">
           <li className="nav-item">
-            <a className="dropdown-item" onClick={changeLanguage("فارسی")}>
+            <a className="dropdown-item" onClick={handleLang}>
               فارسی
             </a>
           </li>
           <li className="nav-item">
-            <a className="dropdown-item"  onClick={changeLanguage("English")}>
+            <a className="dropdown-item"  onClick={handleLang}>
               English
             </a>
           </li>
         </ul>
       </li>
     </ul>
+    {/* ))} */}
+    </div>
   );
 }
